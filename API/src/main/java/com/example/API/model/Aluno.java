@@ -4,30 +4,29 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
 public class Aluno implements Serializable {
 
-    public Aluno(Long id, String nome, String email, String cpf) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.cpf = cpf;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Setter
     private String nome;
 
+    @Setter
     private String email;
 
+    @Setter
     private String cpf;
 }
