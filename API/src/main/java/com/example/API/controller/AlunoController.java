@@ -1,7 +1,8 @@
 package com.example.API.controller;
 
-import com.example.API.model.Aluno;
-import com.example.API.service.AlunoService;
+import com.example.API.domain.Aluno.AlunoDTO;
+import com.example.API.domain.Aluno.AlunoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ public class AlunoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void criarAluno(@RequestBody Aluno aluno) {
-        alunoService.criarAluno(aluno);
+    public void criarAluno(@RequestBody @Valid AlunoDTO alunoDTO) {
+        alunoService.criarAluno(alunoDTO);
     }
 }

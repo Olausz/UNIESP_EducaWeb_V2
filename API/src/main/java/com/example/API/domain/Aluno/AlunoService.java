@@ -1,4 +1,4 @@
-package com.example.API.service;
+package com.example.API.domain.Aluno;
 
 import com.example.API.model.Aluno;
 import com.example.API.repository.AlunoRepository;
@@ -11,7 +11,8 @@ public class AlunoService {
     @Autowired
     AlunoRepository alunoRepository;
 
-    public void criarAluno(Aluno aluno) {
+    public void criarAluno(AlunoDTO dto) {
+        Aluno aluno = new Aluno(null, dto.nome(), dto.email(), dto.cpf());
         alunoRepository.save(aluno);
     }
 }
