@@ -7,9 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-
-import java.util.Optional;
-
 @Service
 public class AlunoService {
 
@@ -25,8 +22,7 @@ public class AlunoService {
         return alunoRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aluno não encontrado"));
     }
-
-
+    
     public void atualizarAlunoPorId(Long id, AlunoAtualizadoDTO dto) {
         Aluno aluno = buscarAlunoPorId(id);
 
