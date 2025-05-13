@@ -24,13 +24,13 @@ public class AlunoService {
     }
     
     public void atualizarAlunoPorId(Long id, AlunoAtualizadoDTO dto) {
-        Aluno aluno = buscarAlunoPorId(id);
+        Aluno alunoDoBanco = buscarAlunoPorId(id);
 
-        aluno.setNome(dto.nome());
-        aluno.setEmail(dto.email());
-        aluno.setCpf(dto.cpf());
+        alunoDoBanco.setNome(dto.nome());
+        alunoDoBanco.setEmail(dto.email());
+        alunoDoBanco.setCpf(dto.cpf());
 
-        alunoRepository.save(aluno);
+        alunoRepository.save(alunoDoBanco);
     }
 
 

@@ -21,12 +21,9 @@ public class Aluno implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter
     private String nome;
 
-    @Setter
     private String email;
 
-    @Setter
     private String cpf;
 }
