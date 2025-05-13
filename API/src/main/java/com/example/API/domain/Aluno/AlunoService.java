@@ -2,6 +2,7 @@ package com.example.API.domain.Aluno;
 
 import com.example.API.model.Aluno;
 import com.example.API.repository.AlunoRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class AlunoService {
 
     public Aluno buscarAlunoPorId(Long id) {
         return alunoRepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Aluno não encontrado"));
+                .orElseThrow(EntityNotFoundException::new);
     }
     
     public void atualizarAlunoPorId(Long id, AlunoAtualizadoDTO dto) {
