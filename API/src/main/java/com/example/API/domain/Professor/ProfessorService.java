@@ -1,11 +1,14 @@
 package com.example.API.domain.Professor;
 
 
+import com.example.API.model.Aluno;
 import com.example.API.model.Professor;
 import com.example.API.repository.ProfessorRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ProfessorService {
@@ -35,6 +38,10 @@ public class ProfessorService {
         professorDoBanco.setEmail(dto.email());
 
         professorRepository.save(professorDoBanco);
+    }
+
+    public List<Professor> listarTodosProfessores() {
+        return professorRepository.findAll();
     }
 
 
