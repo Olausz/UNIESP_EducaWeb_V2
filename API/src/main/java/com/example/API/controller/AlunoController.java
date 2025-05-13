@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -24,14 +25,29 @@ public class AlunoController {
         alunoService.criarAluno(alunoDTO);
     }
 
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public Aluno buscarAlunoPorId(@PathVariable Long id){
         return alunoService.buscarAlunoPorId(id);
     }
 
-    @PutMapping("/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarAlunoPorId(@PathVariable Long id){
+        alunoService.deletarAlunoPorId(id);
+    }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public void atualizarAluno(@PathVariable Long id, @RequestBody @Valid AlunoAtualizadoDTO dto) {
         alunoService.atualizarAlunoPorId(id, dto);
     }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Aluno> listarTodosAlunos() {
+        return alunoService.listarTodosAlunos();
+    }
+
 
 }

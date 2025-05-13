@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 @Service
 public class AlunoService {
 
@@ -19,9 +21,17 @@ public class AlunoService {
         alunoRepository.save(aluno);
     }
 
+    public List<Aluno> listarTodosAlunos() {
+        return alunoRepository.findAll();
+    }
+
     public Aluno buscarAlunoPorId(Long id) {
         return alunoRepository.findById(id)
                 .orElseThrow(EntityNotFoundException::new);
+    }
+
+    public void deletarAlunoPorId(Long id) {
+        alunoRepository.deleteById(id);
     }
     
     public void atualizarAlunoPorId(Long id, AlunoAtualizadoDTO dto) {
