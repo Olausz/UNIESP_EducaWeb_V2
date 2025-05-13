@@ -10,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/alunos")
@@ -48,6 +47,4 @@ public class AlunoController {
     public List<Aluno> listarTodosAlunos() {
         return alunoService.listarTodosAlunos();
     }
-
-
 }
