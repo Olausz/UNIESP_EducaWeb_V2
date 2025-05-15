@@ -9,6 +9,8 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DisciplinaService {
 
@@ -25,5 +27,28 @@ public class DisciplinaService {
         Disciplina disciplina = new Disciplina(null, dto.nome(), professor);
         disciplinaRepository.save(disciplina);
     }
+
+    public Disciplina buscarDisciplinaPorId(Long id) {
+        return disciplinaRepository.findById(id)
+                .orElseThrow(EntityNotFoundException::new);
+    }
+
+    public void deletarDisciplinaPorid(Long id) {
+        disciplinaRepository.deleteById(id);
+    }
+
+    public void atualizarDisciplinaPorId(Long id, DisciplinaAtualizadoDTO dto){
+        Disciplina disciplinaDoBanco = buscarDisciplinaPorId(id);
+
+        disciplinaDoBanco.setId(dto.id());
+        disciplinaDoBanco.setNome(dto.nome());
+
+        disciplinaRepository.save(disciplinaDoBanco);
+    }
+
+    public List<Disciplina> listarTodasAsDiscplinas() {
+        return disciplinaRepository.findAll();
+    }
+
 }
 

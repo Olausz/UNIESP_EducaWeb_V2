@@ -33,6 +33,7 @@ public class ProfessorService {
     public void atualizaProfessorPorId(Long id, ProfessorAtualizadoDTO dto){
         Professor professorDoBanco = buscarProfessorPorId(id);
 
+        professorDoBanco.setId(dto.id());
         professorDoBanco.setNome(dto.nome());
         professorDoBanco.setCpf(dto.cpf());
         professorDoBanco.setEmail(dto.email());
