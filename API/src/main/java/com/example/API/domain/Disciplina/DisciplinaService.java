@@ -22,7 +22,7 @@ public class DisciplinaService {
 
     public void criarDisciplina(DisciplinaDTO dto) {
         Professor professor = professorRepository.findById(dto.professorId())
-                .orElseThrow(EntityNotFoundException::new); // usa a exceção padrão
+                .orElseThrow(EntityNotFoundException::new);
 
         Disciplina disciplina = new Disciplina(null, dto.nome(), professor);
         disciplinaRepository.save(disciplina);
@@ -49,6 +49,8 @@ public class DisciplinaService {
     public List<Disciplina> listarTodasAsDiscplinas() {
         return disciplinaRepository.findAll();
     }
+
+
 
 }
 
