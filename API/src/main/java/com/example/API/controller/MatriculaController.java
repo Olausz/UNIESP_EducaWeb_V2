@@ -1,6 +1,7 @@
 package com.example.API.controller;
 
 import com.example.API.domain.Matricula.AtualizarNotasRequest;
+import com.example.API.domain.Matricula.HistoricoAlunoResponse;
 import com.example.API.domain.Matricula.MatriculaDTO;
 import com.example.API.domain.Matricula.MatriculaDoAlunoService;
 import jakarta.validation.Valid;
@@ -32,5 +33,12 @@ public class MatriculaController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void atualizarNotas(@RequestBody AtualizarNotasRequest atualizarNotasRequest, @PathVariable Long id){
         matriculaDoAlunoService.atualizarNotas(id, atualizarNotasRequest);
+    }
+
+    @GetMapping("/emitir-historico/{alunoId}")
+    @ResponseStatus(HttpStatus.OK)
+    public HistoricoAlunoResponse emitirHistorico(@PathVariable Long id) {
+        return matriculaDoAlunoService.
+
     }
 }
