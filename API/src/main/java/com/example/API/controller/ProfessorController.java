@@ -3,7 +3,7 @@ package com.example.API.controller;
 import com.example.API.domain.Professor.ProfessorAtualizadoDTO;
 import com.example.API.domain.Professor.ProfessorDTO;
 import com.example.API.domain.Professor.ProfessorService;
-import com.example.API.model.Professor;
+import com.example.API.domain.Professor.Professor;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

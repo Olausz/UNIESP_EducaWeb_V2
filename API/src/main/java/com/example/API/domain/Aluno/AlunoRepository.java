@@ -1,6 +1,5 @@
-package com.example.API.repository;
+package com.example.API.domain.Aluno;
 
-import com.example.API.model.Aluno;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

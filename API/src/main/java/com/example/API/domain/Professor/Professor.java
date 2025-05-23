@@ -1,4 +1,4 @@
-package com.example.API.model;
+package com.example.API.domain.Professor;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

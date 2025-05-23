@@ -1,10 +1,7 @@
 package com.example.API.domain.Disciplina;
 
-import com.example.API.domain.Professor.ProfessorDTO;
-import com.example.API.model.Disciplina;
-import com.example.API.model.Professor;
-import com.example.API.repository.DisciplinaRepository;
-import com.example.API.repository.ProfessorRepository;
+import com.example.API.domain.Professor.Professor;
+import com.example.API.domain.Professor.ProfessorRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

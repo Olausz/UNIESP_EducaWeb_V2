@@ -1,12 +1,9 @@
 package com.example.API.controller;
 
-import com.example.API.domain.Aluno.AlunoDTO;
 import com.example.API.domain.Disciplina.DisciplinaAtualizadoDTO;
 import com.example.API.domain.Disciplina.DisciplinaDTO;
 import com.example.API.domain.Disciplina.DisciplinaService;
-import com.example.API.domain.Professor.ProfessorAtualizadoDTO;
-import com.example.API.model.Disciplina;
-import com.example.API.model.Professor;
+import com.example.API.domain.Disciplina.Disciplina;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

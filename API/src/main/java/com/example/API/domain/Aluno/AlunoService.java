@@ -1,7 +1,5 @@
 package com.example.API.domain.Aluno;
 
-import com.example.API.model.Aluno;
-import com.example.API.repository.AlunoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

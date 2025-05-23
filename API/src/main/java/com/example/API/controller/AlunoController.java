@@ -3,7 +3,7 @@ package com.example.API.controller;
 import com.example.API.domain.Aluno.AlunoAtualizadoDTO;
 import com.example.API.domain.Aluno.AlunoDTO;
 import com.example.API.domain.Aluno.AlunoService;
-import com.example.API.model.Aluno;
+import com.example.API.domain.Aluno.Aluno;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

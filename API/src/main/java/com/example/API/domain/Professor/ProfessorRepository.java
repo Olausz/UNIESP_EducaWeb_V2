@@ -1,6 +1,5 @@
-package com.example.API.repository;
+package com.example.API.domain.Professor;
 
-import com.example.API.model.Professor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,8 @@
-package com.example.API.model;
+package com.example.API.domain.Matricula;
 
 
+import com.example.API.domain.Aluno.Aluno;
+import com.example.API.domain.Disciplina.Disciplina;
 import com.example.API.domain.Enums.StatusMatricula;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

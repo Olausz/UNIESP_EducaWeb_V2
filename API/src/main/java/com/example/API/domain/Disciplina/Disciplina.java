@@ -1,9 +1,7 @@
-package com.example.API.model;
+package com.example.API.domain.Disciplina;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.API.domain.Professor.Professor;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @Entity
-public class Aluno implements Serializable {
+public class Disciplina implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +20,7 @@ public class Aluno implements Serializable {
 
     private String nome;
 
-    private String email;
-
-    private String cpf;
+    @ManyToOne
+    @JoinColumn(name = "professor_id")
+    private Professor professor;
 }
