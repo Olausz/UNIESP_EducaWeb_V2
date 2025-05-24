@@ -35,6 +35,11 @@ public class Usuario implements UserDetails {
                 (new SimpleGrantedAuthority("ROLE_USER"));
     }
 
+    public Usuario(String login, String senha){
+        this.login = login;
+        this.senha = senha;
+    }
+
     @Override
     public String getPassword() {
         return senha;
