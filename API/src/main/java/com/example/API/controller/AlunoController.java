@@ -4,6 +4,7 @@ import com.example.API.domain.Aluno.AlunoAtualizadoDTO;
 import com.example.API.domain.Aluno.AlunoDTO;
 import com.example.API.domain.Aluno.AlunoService;
 import com.example.API.domain.Aluno.Aluno;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/alunos")
+@SecurityRequirement(name = "bearer-key")
 public class AlunoController {
 
     @Autowired

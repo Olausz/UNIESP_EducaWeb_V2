@@ -4,6 +4,7 @@ import com.example.API.domain.Disciplina.DisciplinaAtualizadoDTO;
 import com.example.API.domain.Disciplina.DisciplinaDTO;
 import com.example.API.domain.Disciplina.DisciplinaService;
 import com.example.API.domain.Disciplina.Disciplina;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/disciplinas")
+@SecurityRequirement(name = "bearer-key")
 public class DisciplinaController {
 
     @Autowired
