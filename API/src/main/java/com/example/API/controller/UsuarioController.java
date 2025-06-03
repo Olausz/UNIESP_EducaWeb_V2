@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
@@ -27,18 +26,17 @@ public class UsuarioController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity cadastro(@RequestBody @Valid DadosCadastroUsuario dados, UriComponentsBuilder uriBuilder){
+    public ResponseEntity cadastro(@RequestBody @Valid DadosCadastroUsuario dados, UriComponentsBuilder uriBuilder) {
         if (usuarioRepository.findByLogin(dados.login()) != null) {
             return ResponseEntity.badRequest().body("Login já cadastrado.");
         }
 
-        var senhaCriptografada =
-                passwordEncoder.encode(dados.senha());
-        var usuario =
-                new Usuario(dados.login(), senhaCriptografada);
+        var senhaCriptografada = passwordEncoder.encode(dados.senha());
+        var usuario = new Usuario(dados.login(), senhaCriptografada);
 
         usuarioRepository.save(usuario);
-        return null;
 
+        var uri = uriBuilder.path("/cadastros/{id}").buildAndExpand(usuario.getId()).toUri();
+        return ResponseEntity.created(uri).body("Usuário cadastrado com sucesso!");
     }
 }
